@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "quizify"
+version = "0.1.0"
+description = "Quizify is a Python package for creating quizzes from the csv file."
+authors = ["Valijonov", "Gor", "Kiuma"]
+readme = "README.md"
+packages = [{include = "quizify"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+quizify = "quizify.__main__:main"
