@@ -3,6 +3,7 @@ The entry point of the application
 """
 
 import argparse
+import os
 
 from quizify.check import QuizChecker
 from quizify.presenter import QuizPresenter
@@ -43,6 +44,14 @@ def main():
     )
 
     args = parser.parse_args()
+
+    if not os.path.isfile(args.questions):
+        print(f"Questions file {args.questions} does not exist")
+        exit(1)
+
+    if not os.path.isfile(args.score_penalty):
+        print(f"Score penalty file {args.score_penalty} does not exist")
+        exit(1)
 
     quiz_checker = QuizChecker(args.score_penalty)
     quiz_presenter = QuizPresenter(shuffle=args.shuffle)

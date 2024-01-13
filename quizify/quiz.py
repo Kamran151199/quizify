@@ -4,6 +4,7 @@ This module contains the logic related to the quiz
 
 import abc
 import csv
+import os
 from pprint import pprint
 from typing import Protocol
 
@@ -81,6 +82,7 @@ class Quiz(QuizBase):
         Reads the questions from the questions.csv file
         :return: the questions
         """
+
         with open(self._questions_path, 'r', encoding='utf-8') as file:
             reader = csv.reader(file)
             next(reader)
@@ -122,7 +124,12 @@ class Quiz(QuizBase):
         """
         This method starts the quiz
         """
-        self.prepare()
+        try:
+            self.prepare()
+        except ValueError as exc:
+            print(f'Quiz preparation failed (Make sure all the inputs are as per docs): {exc}')
+            return
+
         self.presenter.present()
 
     @property

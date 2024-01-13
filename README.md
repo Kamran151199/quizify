@@ -28,6 +28,27 @@ At the end of the quiz, the user is presented with their score.
 - Run `quizify` to start the app
 - Run `quizify --help` to see available options
 
+## Schema of CSV files
+
+### Questions
+
+- The questions csv file should have the following columns:
+    - `question`: The question to be asked
+    - `answer`: The correct answer to the question
+    - `options`: The options separated by `;` (semi-colon)
+    - `level`: Any meta data that you want to show to the user after the question has been answered
+
+### Score Penalty
+
+- The score penalty csv file should have the following columns:
+    - `level`: The level of the question
+    - `penalty`: The penalty to be applied to the score if the question is answered incorrectly
+
+### Example CSV files
+
+- [questions.csv](https://github.com/Kamran151199/quizify/blob/main/seeds/quiz_questions.csv)
+- [score_penalty_config.csv](https://github.com/Kamran151199/quizify/blob/main/seeds/score_penalty.csv)
+
 ## Example Usage
 
 - `quizify --help` to see available options

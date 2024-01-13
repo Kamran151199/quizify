@@ -105,3 +105,4 @@ class QuizChecker(QuizCheckerBase):
             max_score += self.level_score_penalty_mapper.get(
                 question.level, {}).get('score', 1.0)
         return max_score
+
