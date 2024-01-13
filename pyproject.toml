@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quizify"
-version = "0.1.0"
+version = "0.1.1"
 description = "Quizify is a Python package for creating quizzes from the csv file."
 authors = ["Valijonov", "Gor", "Kiuma"]
 readme = "README.md"
